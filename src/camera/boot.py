@@ -1,6 +1,6 @@
 # boot.py -- run on boot-up
 
-import network
+'''import network
 from wifi import keys
 from time import sleep
 
@@ -18,4 +18,4 @@ if not sta_if.isconnected():              # Check if connection already establis
         sleep(1)
     
     adress = sta_if.ifconfig()[0] # Retrieve and print device ip-adress
-    print("\nConnected to WiFi with adress {}".format(adress))
+    print("\nConnected to WiFi with adress {}".format(adress))'''

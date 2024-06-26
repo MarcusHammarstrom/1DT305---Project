@@ -3,17 +3,18 @@
 import camera
 import utime
 
-camera.init(0, format=camera.JPEG)
-
 while True:
-    print("Taking a photo in 5 seconds")
-    utime.sleep(5)
     try: 
+        print("Taking a photo in 10 seconds")
+        utime.sleep(10)
+        camera.init(0, format=camera.JPEG)
         buffer = camera.capture()
-        print("Size of image is " + len(buffer) + "bytes")
+        print("Size of image is " + str(len(buffer)) + "bytes")
         file_path = "img.jpg"
         file = open(file_path, "w")
         file.write(buffer)
         file.close()
-    except:
+    except Exception as e:
         print("Something went wrong")
+        print(str(e))
+    camera.deinit()
