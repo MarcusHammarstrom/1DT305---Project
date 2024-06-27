@@ -1,7 +1,7 @@
 # boot.py -- run on boot-up
 
 import network
-from wifi import keys
+import secrets
 from time import sleep
 
 sta_if = network.WLAN(network.STA_IF)     # Create instance of a station interface object
@@ -10,7 +10,7 @@ if not sta_if.isconnected():              # Check if connection already establis
     print("Connecting to the network...")  
     sta_if.active(True)                   # Activate station interface
 
-    sta_if.connect(keys["SSID"], keys["PASS"]) # Connect to WiFi
+    sta_if.connect(secrets.WIFI_SSID, secrets.WIFI_PASSWORD) # Connect to WiFi
     print('Waiting for connection...', end='') 
 
     while not sta_if.isconnected() and sta_if.status() >= 0: # Wait for connection
