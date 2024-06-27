@@ -4,6 +4,7 @@ import network
 import secrets
 from time import sleep
 
+network.WLAN(network.AP_IF).active(False)
 sta_if = network.WLAN(network.STA_IF)     # Create instance of a station interface object
 
 if not sta_if.isconnected():              # Check if connection already established
