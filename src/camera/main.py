@@ -7,18 +7,6 @@ import secrets
 from mqtt import MQTTClient
 import gc
 
-def SendData(value):
-    url = "https://io.adafruit.com/api/v2/MarcusHammarstrom/feeds/plant-camera/data"
-    headers = {"X-AIO-Key": secrets.AIO_KEY, "Content-Type": "application/json"}
-    data = BuildJSON(value)
-    print(value)
-    return requests.post(url=url, headers=headers, json=data)
-    
-def BuildJSON(value):
-    data = { "value": value }
-    print(str(data))
-    return data
-
 client = MQTTClient(secrets.AIO_CLIENT_ID, secrets.AIO_SERVER, secrets.AIO_PORT, secrets.AIO_USER, secrets.AIO_KEY, 60)
 client.connect()
 
