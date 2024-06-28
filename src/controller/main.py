@@ -28,8 +28,8 @@ while True:
 
             sum_oregano += temp_oregano
             sum_parsley += temp_parsley
-            #print("Oregano value: " + str(temp_oregano))
-            #print("Parsley value: " + str(temp_parsley))
+            print("Oregano value: " + str(temp_oregano))
+            print("Parsley value: " + str(temp_parsley))
         oregano_val = sum_oregano / 15.0
         parsley_val = sum_parsley / 15.0
         print("Avaraged Oregano value: " + str(oregano_val))
