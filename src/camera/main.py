@@ -19,7 +19,7 @@ def SendData(value):
 while True:
     try: 
         print("Taking a photo in 15 seconds")
-        utime.sleep(5)
+        utime.sleep(15)
         camera.init(0, format=camera.JPEG, framesize=camera.FRAME_HVGA)
         buffer = camera.capture()
         print("Size of image is " + str(len(buffer)) + "bytes")

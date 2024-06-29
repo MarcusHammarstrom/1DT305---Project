@@ -19,12 +19,51 @@ The purpose of this project was for me to learn more about home automation, gath
 | FT232RL USB till TTL Seriell Adapter | [Amazon](https://www.amazon.se/dp/B01N9RZK6I?ref=ppx_yo2ov_dt_b_product_details&th=1) | 74SEK |
 | 2x Soil moisture sensors | [Amazon](https://www.amazon.se/dp/B07V2BBVQR?ref=ppx_yo2ov_dt_b_product_details&th=1) | 109SEK for 3 |
 | Jumper wires | [Amazon](https://www.amazon.se/dp/B01EV70C78?ref=ppx_yo2ov_dt_b_product_details&th=1) | 90SEK |
+| Breadboard | [Electrokit](https://www.electrokit.com/en/kopplingsdack-400-anslutningar) | 49SEK |
+| Relay | [Amazon](https://www.amazon.se/dp/B07VPKBRXF?psc=1&ref=ppx_yo2ov_dt_b_product_details) | 79SEK |
+| Water pump | [Amazon](https://www.amazon.se/dp/B09SH3KLB9?psc=1&ref=ppx_yo2ov_dt_b_product_details) | 168SEK |
+| Battery holder | [Amazon](https://www.amazon.se/dp/B0732ZX9CR?ref=ppx_yo2ov_dt_b_product_details) | 110SEK |
+| Water tank | 
+| PVC Hose | [Biltema](https://www.biltema.se/bat/vvs/slangar/pvc-slangar/pvc-slang-5-m-x-12-mm-2000060033) | 55SEK |
+| Hose connector | [Biltema](https://www.biltema.se/bil---mc/bilreservdelar/avgassystem/avgassystem-universala/slanganslutningar-68-st-2000047976) | 169SEK |
 
 ### ESP32
 
 The ESP32 module is the controller that handles all the sensor data from the soil moisture sensors and processes it before sending to Adafruit IO. It is also responsible for signalling the waterpump to be activated. 
+<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/ESP32.png?raw=true" alt="Image" width="250" height="250">
 
-<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/ESP32.png?raw=true" alt="Image" width="200" height="200">
+### ESP32-CAM
+
+The ESP32-CAM provides images of the plants to view online.
+<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/ESP32-Cam.png?raw=true" alt="Image" width="250" height="250">
+
+### FT232RL USB till TTL Seriell Adapter
+
+The FT232RL adapter provides a way of programming the ESP32-CAM since it does not have it's own USB-port. By VCC, GND and UART pins from the CAM-board to the adapter we can plug it into the computer to program it.
+<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/FT232RL.png?raw=true" alt="Image" width="250" height="250">
+
+### Soil moisture sensors
+
+The soil moistures sensors provide data to the ESP32 by measuring the capacitance of the soil. It does this by sending an analog signal to the controller which through it's analog to digital converter can give a digital value from 0-4095.
+
+### Jumper wires
+
+Jumper wires are used to connect the different electrical components together, such as providing power to the moisture sensors and giving way for the analog signal back to the board.
+<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/jumper-wires.png?raw=true" alt="Image" width="250" height="250">
+
+### Breadboard
+
+The solderless breadboard is a useful plastic block with a grid of electrical connections easily accessible through small holes. In this project it was used to aid in connecting the ESP32
+
+### Water tank
+
+
+
+### PVC Hose
+
+To move water from the tank to 
+
+### Hose connector
 
 ## Computer setup
 
