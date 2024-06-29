@@ -24,7 +24,7 @@ The purpose of this project was for me to learn more about home automation, gath
 
 The ESP32 module is the controller that handles all the sensor data from the soil moisture sensors and processes it before sending to Adafruit IO. It is also responsible for signalling the waterpump to be activated. 
 
-<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/ESP32.jpg?raw=true" alt="Image" width="200" height="200">
+<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/ESP32.png?raw=true" alt="Image" width="200" height="200">
 
 ## Computer setup
 
