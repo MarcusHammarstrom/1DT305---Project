@@ -34,7 +34,7 @@ The ESP32 module is the controller that handles all the sensor data from the soi
 
 ### ESP32-CAM
 
-The ESP32-CAM provides images of the plants to view online.
+The ESP32-CAM provides images of the plants to view online. \
 <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/ESP32-Cam.png?raw=true" alt="Image" width="250" height="250">
 
 ### FT232RL USB till TTL Seriell Adapter
