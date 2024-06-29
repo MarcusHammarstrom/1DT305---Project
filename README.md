@@ -64,14 +64,17 @@ The relay serves as a electronic switch to turn on and off the waterpump. \
 
 ### Water pump
 
-The waterpump is used to transport water from the tank to the plants. 
+The waterpump is used to transport water from the tank to the plants. \
 <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/pump.png?raw=true" alt="Image" width="250" height="250">
 
 ### Battery holder
 
+To provide 12v power to the waterpump i needed either a battery, battery holder or a transformer. I choose to go with a battery holder that holds 8AA batteries to provide power to the pump. \
+<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/battery-holder.png?raw=true" alt="Image" width="250" height="250">
 ### Water tank
 
 For the waterpump I needed to have something to hold the water. \
+<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/water-tank.png?raw=true" alt="Image" width="250" height="250">
 
 ### PVC Hose
 
