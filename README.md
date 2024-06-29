@@ -49,7 +49,7 @@ The soil moistures sensors provide data to the ESP32 by measuring the capacitanc
 
 ### Jumper wires
 
-Jumper wires are used to connect the different electrical components together, such as providing power to the moisture sensors and giving way for the analog signal back to the board.
+Jumper wires are used to connect the different electrical components together, such as providing power to the moisture sensors and giving way for the analog signal back to the board. \
 <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/jumper-wires.png?raw=true" alt="Image" width="250" height="250">
 
 ### Breadboard
@@ -59,7 +59,7 @@ The solderless breadboard is a useful plastic block with a grid of electrical co
 
 ### Relay
 
-The relay serves as a electronic switch to turn on and off the waterpump. 
+The relay serves as a electronic switch to turn on and off the waterpump. \
 <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/relay.png?raw=true" alt="Image" width="250" height="250">
 
 ### Water pump
@@ -71,15 +71,17 @@ The waterpump is used to transport water from the tank to the plants.
 
 ### Water tank
 
-For the waterpump I needed to have something to hold the water.
+For the waterpump I needed to have something to hold the water. \
 
 ### PVC Hose
 
-To move water from the tank to the plants i needed a hose to transport it in.
+To move water from the tank to the plants i needed a hose to transport it in. \
+<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/pvc.png?raw=true" alt="Image" width="250" height="250">
 
 ### Hose connector
 
-The hose connector serves to split the hose into two, one for each plant.
+The hose connector serves to split the hose into two, one for each plant. \
+<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/hose-connector.png?raw=true" alt="Image" width="250" height="250">
 
 ## Computer setup
 
