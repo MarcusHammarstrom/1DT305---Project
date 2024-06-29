@@ -23,7 +23,7 @@ The purpose of this project was for me to learn more about home automation, gath
 | Relay | [Amazon](https://www.amazon.se/dp/B07VPKBRXF?psc=1&ref=ppx_yo2ov_dt_b_product_details) | 79SEK |
 | Water pump | [Amazon](https://www.amazon.se/dp/B09SH3KLB9?psc=1&ref=ppx_yo2ov_dt_b_product_details) | 168SEK |
 | Battery holder | [Amazon](https://www.amazon.se/dp/B0732ZX9CR?ref=ppx_yo2ov_dt_b_product_details) | 110SEK |
-| Water tank | 
+| Water tank | [Biltema](https://www.biltema.se/fritid/friluftsliv-och-camping/vattendunkar/vattendunk-20-liter-2000058554) | 90SEK |
 | PVC Hose | [Biltema](https://www.biltema.se/bat/vvs/slangar/pvc-slangar/pvc-slang-5-m-x-12-mm-2000060033) | 55SEK |
 | Hose connector | [Biltema](https://www.biltema.se/bil---mc/bilreservdelar/avgassystem/avgassystem-universala/slanganslutningar-68-st-2000047976) | 169SEK |
 
@@ -45,6 +45,7 @@ The FT232RL adapter provides a way of programming the ESP32-CAM since it does no
 ### Soil moisture sensors
 
 The soil moistures sensors provide data to the ESP32 by measuring the capacitance of the soil. It does this by sending an analog signal to the controller which through it's analog to digital converter can give a digital value from 0-4095.
+<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/sensors.png?raw=true" alt="Image" width="250" height="250">
 
 ### Jumper wires
 
@@ -53,17 +54,32 @@ Jumper wires are used to connect the different electrical components together, s
 
 ### Breadboard
 
-The solderless breadboard is a useful plastic block with a grid of electrical connections easily accessible through small holes. In this project it was used to aid in connecting the ESP32
+The solderless breadboard is a useful plastic block with a grid of electrical connections easily accessible through small holes. In this project it was used to aid in connecting the ESP32 to the sensors and the relay.
+<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/breadboard.png?raw=true" alt="Image" width="250" height="250">
+
+### Relay
+
+The relay serves as a electronic switch to turn on and off the waterpump. 
+<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/relay.png?raw=true" alt="Image" width="250" height="250">
+
+### Water pump
+
+The waterpump is used to transport water from the tank to the plants. 
+<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/pump.png?raw=true" alt="Image" width="250" height="250">
+
+### Battery holder
 
 ### Water tank
 
-
+For the waterpump I needed to have something to hold the water.
 
 ### PVC Hose
 
-To move water from the tank to 
+To move water from the tank to the plants i needed a hose to transport it in.
 
 ### Hose connector
+
+The hose connector serves to split the hose into two, one for each plant.
 
 ## Computer setup
 
