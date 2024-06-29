@@ -4,16 +4,22 @@ import camera
 import utime
 import base64
 import secrets
-from mqtt import MQTTClient
+import urequests as requests
 import gc
 
-client = MQTTClient(secrets.AIO_CLIENT_ID, secrets.AIO_SERVER, secrets.AIO_PORT, secrets.AIO_USER, secrets.AIO_KEY, 60)
-client.connect()
+def BuildJSON(value):
+    data = { "value": value }
+    return data
+
+def SendData(value):
+    headers = { "X-AIO-Key": secrets.AIO_KEY, "Content-Type": "application/json"}
+    data = BuildJSON(value)
+    return requests.post(secrets.AIO_CAMERA_FEED, json=data, headers=headers)
 
 while True:
     try: 
         print("Taking a photo in 15 seconds")
-        utime.sleep(15)
+        utime.sleep(5)
         camera.init(0, format=camera.JPEG, framesize=camera.FRAME_HVGA)
         buffer = camera.capture()
         print("Size of image is " + str(len(buffer)) + "bytes")
@@ -21,8 +27,14 @@ while True:
         del buffer
         gc.collect()					# Free buffer mem
         data = data.decode("utf-8")     # decode base64 bytes to a base64 string
-        client.publish(topic=secrets.AIO_CAMERA_FEED, msg=data, qos=1)
+        response = SendData(data)
         del data
+        gc.collect()
+        if response.status_code == 200:
+            print("Data sent successfully")
+        else:
+            print("Failed to send data")
+        del response
         gc.collect()
     except Exception as e:
         print("Something went wrong")
