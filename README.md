@@ -94,9 +94,9 @@ My first choice of IDE was Visual Studio Code and use PyMakr to upload the code.
 
 1. Flashing micropython firmware to the boards.
 
-    Download firmware from this [Link](https://micropython.org/download/ESP32_GENERIC/) and follow the instruction for how to flash the firmware onto the ESP32 board.
-    To make the board ready to flash you need to hold down the BOOT button.
-    Download the ESP32-Cam firmware from [this repository](https://github.com/lemariva/micropython-camera-driver).
+    Download firmware from this [Link](https://micropython.org/download/ESP32_GENERIC/) and follow the instruction for how to flash the firmware onto the ESP32 board. \
+    To make the board ready to flash you need to hold down the BOOT button. \
+    Download the ESP32-Cam firmware from [this repository](https://github.com/lemariva/micropython-camera-driver). \
     Connect GPIO 0 to GND on the ESP32-Cam board to be able to flash the board.
 
 ## Platform 
