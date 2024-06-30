@@ -283,7 +283,27 @@ SendData(str(chives_moisture), secrets.AIO_PLANT2_FEED)
 The data is presented on a dashboard on io.adafruit.com.
 
 <p align="center">
-    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/dashboard.png?raw=true" alt="Image" width="600">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/dashboard.png?raw=true" alt="Image" width="800">
+</p>
+
+Here, the data is presented in three different formats. For the current value of the sensors, it is displayed with gauges.
+
+<p align="center">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/gauges.png?raw=true" alt="Image" width="800">
+</p>
+
+With these values it should be noted that it resresents how close the value is reading to the reading 100% in water, it does not however represent being above 90% actual moisture in the soil. 
+
+The sensor data is also presented in line charts to provide some history. 
+
+<p align="center">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/charts.png?raw=true" alt="Image" width="800">
+</p>
+
+And finally we have an image feed displaying the latest sent image from the camera. 
+
+<p align="center">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/image-feed.png?raw=true" alt="Image" width="800">
 </p>
 
 ## Finalizing the design
