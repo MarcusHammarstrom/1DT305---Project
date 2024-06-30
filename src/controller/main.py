@@ -44,7 +44,7 @@ def CalculateMoisture(chives, dill):
 
 def WaterPlants():
     pump.value(1)
-    utime.sleep(5)
+    utime.sleep(10)
     pump.value(0)
     utime.sleep(60) # Sleep for 60 seconds to avoid activating function again on the same day. 
     
