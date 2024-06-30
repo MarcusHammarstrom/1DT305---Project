@@ -27,6 +27,7 @@ ntptime.host = "0.se.pool.ntp.org"
 ntptime.settime()   # Set time on the clock
 
 pump = Pin(PUMP_PIN, Pin.OUT)
+pump.value(1)
 
 def BuildJSON(value):
     data = { "value": value }
@@ -70,8 +71,8 @@ while True:
         chives_moisture, dill_moisture = CalculateMoisture(chives_val, dill_val)
         print("Chives value: " + str(chives_moisture))
         print("Dill value: " + str(dill_moisture))
-        #SendData(str(dill_moisture), secrets.AIO_PLANT1_FEED)
-        #SendData(str(chives_moisture), secrets.AIO_PLANT2_FEED)
+        SendData(str(dill_moisture), secrets.AIO_PLANT1_FEED)
+        SendData(str(chives_moisture), secrets.AIO_PLANT2_FEED)
         utime.sleep(10)
     except Exception as e:
         print("Something went wrong")
