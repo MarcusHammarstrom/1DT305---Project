@@ -4,14 +4,19 @@ from machine import Pin, ADC
 import utime
 import secrets
 import urequests as requests
+import ntptime
 
-MIN_CHIVES = 0
-MIN_DILL = 0
-MAX_CHIVES = 0
-MAX_DILL = 0
+MAX_CHIVES = 2544
+MAX_DILL = 2536
+MIN_CHIVES = 905
+MIN_DILL = 848
+
+CHIVES_DIFF = MAX_CHIVES - MIN_CHIVES
+DILL_DIFF = MAX_DILL - MIN_DILL
 
 DILL_PIN = 32
 CHIVES_PIN = 35
+PUMP_PIN = 26
 
 chives_sensor = ADC(Pin(CHIVES_PIN))
 chives_sensor.atten(ADC.ATTN_11DB)
@@ -27,8 +32,22 @@ def SendData(value, feed):
     data = BuildJSON(value)
     return requests.post(feed, json=data, headers=headers)
 
+def CalculateMoisture(chives, dill):
+    chives_moisture = (MAX_CHIVES - chives) / CHIVES_DIFF	# Scale the sensor readings. 0 value means dry, 1 mean completely wet.
+    dill_moisture = (MAX_DILL - chives) / DILL_DIFF
+    return (chives_moisture * 100, dill_moisture * 100)		# Put moisture value in percentage form.
+
+ntptime.host = "0.se.pool.ntp.org"
+ntptime.settime()
+
+pump = Pin(PUMP_PIN, Pin.OUT)
+    
 while True:
     try:
+        current_time = utime.localtime(utime.time() + (2 * 3600))
+        print("Hour: " + str(current_time[3]))
+        print("Minute: " + str(current_time[4]))
+        if (current_time[3] == )
         sum_dill = 0
         sum_chives = 0
         print("Making sensor readings")
@@ -41,10 +60,11 @@ while True:
             sum_dill += temp_dill
         chives_val = sum_chives / 10.0
         dill_val = sum_dill / 10.0
-        print("Chives value: " + str(chives_val))
-        print("Dill value: " + str(dill_val))
-        #SendData(str(dill_val), secrets.AIO_PLANT1_FEED)
-        #SendData(str(chives_val), secrets.AIO_PLANT2_FEED)
+        chives_moisture, dill_moisture = CalculateMoisture(chives_val, dill_val)
+        print("Chives value: " + str(chives_moisture))
+        print("Dill value: " + str(dill_moisture))
+        #SendData(str(dill_moisture), secrets.AIO_PLANT1_FEED)
+        #SendData(str(chives_moisture), secrets.AIO_PLANT2_FEED)
         utime.sleep(10)
     except Exception as e:
         print("Something went wrong")
