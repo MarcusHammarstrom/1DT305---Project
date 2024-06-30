@@ -311,13 +311,13 @@ And finally we have an image feed displaying the latest sent image from the came
 Finally the project is done, and this is what it looks like.
 
 <p align="center">
-    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/final1.jpg?raw=true" alt="Image" width="800">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/final1.jpg?raw=true" alt="Image" width="450">
 </p>
 
 <p align="center">
-    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/final2.jpg?raw=true" alt="Image" width="800">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/final2.jpg?raw=true" alt="Image" width="450">
 </p>
 
 <p align="center">
-    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/final3.jpg?raw=true" alt="Image" width="800">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/final3.jpg?raw=true" alt="Image" width="450">
 </p>
