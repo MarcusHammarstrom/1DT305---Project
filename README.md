@@ -148,9 +148,47 @@ The 5V output of the ESP32 is then connected to DC+ on the relay module and DC- 
 
 Since I wanted to expirement with an image feed i went looking for one that could support it. My choice came to be Adafruit IO since they could display images if sent as Base64 image data strings. It is also a cloud platform so the setup was much more straightforward than a self-hosted option. Self-hosted options were of interest but the scope of my project i chose to make it simpler when other parts took more time.
 
-Adafruit IO offers multiple different options for displaying your data. I chose line charts to show data history from the moisture sensors and a gauge to show current value from the moisture sensors. I also set up an image feedd for the images sent from the ESP32-CAM.
+Adafruit IO offers multiple different options for displaying your data. I chose line charts to show data history from the moisture sensors and a gauge to show current value from the moisture sensors. I also set up an image feed for the images sent from the ESP32-CAM.
 
 ## The code
+
+The following code is in the boot.py file for both the ESP32 and the ESP32-CAM and it connects to my WiFi at home. 
+```py
+import network
+import secrets
+from utime import sleep
+
+network.WLAN(network.AP_IF).active(False) # Make sure access point interface is inactive
+sta_if = network.WLAN(network.STA_IF)     # Create instance of the station interface
+
+if not sta_if.isconnected():              # Check if connection already established
+    print("Connecting to the network...")  
+    sta_if.active(True)                   # Activate station interface
+
+    sta_if.connect(secrets.WIFI_SSID, secrets.WIFI_PASSWORD) # Connect to WiFi
+    print('Waiting for connection...', end='') 
+
+    while not sta_if.isconnected() and sta_if.status() >= 0: # Wait for connection
+        print('.', end='')
+        sleep(1)
+    
+    adress = sta_if.ifconfig()[0] # Retrieve and print device ip-adress
+    print("\nConnected to WiFi with adress {}".format(adress))
+```
+First we make sure that the Access Point interface of the board isn't active. Then we create an instance of the station interface. If the interface isn't connected to a network we will make sure the station interface is active and then proceed to connect to my home WiFi using the right credentials. When connected, the device IP-adress is printed. 
+
+### Camera
+```py
+import camera 
+
+...
+
+camera.init(0, format=camera.JPEG, framesize=camera.FRAME_HVGA)
+buffer = camera.capture()
+print("Size of image is " + str(len(buffer)) + "bytes")
+data = base64.b64encode(buffer) # Encode image to base64
+data = data.decode("utf-8")     # decode base64 bytes to a base64 string
+```
 
 ## Transmitting the data
 

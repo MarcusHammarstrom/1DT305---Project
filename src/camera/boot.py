@@ -2,10 +2,10 @@
 
 import network
 import secrets
-from time import sleep
+from utime import sleep
 
-network.WLAN(network.AP_IF).active(False)
-sta_if = network.WLAN(network.STA_IF)     # Create instance of a station interface object
+network.WLAN(network.AP_IF).active(False) # Make sure access point interface is inactive
+sta_if = network.WLAN(network.STA_IF)     # Create instance of the station interface
 
 if not sta_if.isconnected():              # Check if connection already established
     print("Connecting to the network...")  
