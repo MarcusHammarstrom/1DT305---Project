@@ -108,7 +108,9 @@ My first choice of IDE was Visual Studio Code and use PyMakr to upload the code.
 
 ### Wiring
 
-<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/circuit.png?raw=true" alt="Image">
+<p align="center">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/circuit.png?raw=true" alt="Image">
+</p>
 
 ## Platform 
 
