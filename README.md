@@ -4,7 +4,7 @@ Marcus Hammarström / mh226yz
 
 Plant automation is a project for monitoring and watering two plants at home. Providing moisture sensing, automated irrigation as well as regular photos of the plants. Recreating this project will give usefull skills for home automation and a functioning plant monitoring and watering system.
 
-The project will take approximately 3-4 hours to recreate.
+The project will take approximately 4-5 hours to recreate.
 
 ## Objective
 
@@ -112,7 +112,7 @@ The hose connector serves to split the hose into two, one for each plant. \
 
 ## Computer setup
 
-My first choice of IDE was Visual Studio Code and use PyMakr to upload the code. But after running into problems with PyMakr while trying to upload code to the ESP32-Cam, I decided to switch to Thonny. 
+My first choice of IDE was Visual Studio Code and use PyMakr to upload the code. But after running into problems with PyMakr while trying to upload code to the ESP32-Cam, I decided to switch to Thonny.
 
 ### Development environment setup
 
@@ -136,7 +136,15 @@ My first choice of IDE was Visual Studio Code and use PyMakr to upload the code.
     <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/circuit.png?raw=true" alt="Image">
 </p>
 
-## Platform 
+The circuit diagram is made on the online platform [Circuit Diagram](https://www.circuit-diagram.org/). The pinout on the ESP32 board and the ESP32-CAM board are not 100% accurate to the boards I have because they did not have these boards on the website. But the pins that are in use are accurate and describes reality well.
+
+Both sensors aswell as the ESP32-Cam is connected to the ESP32 3.3V pin aswell as an ESP32 ground pin. The soil moisture sensors are connected to GPIO 32 and GPIO 35 on the ESP32 board. GPIO 32 and GPIO 35 are two different channels on the ESP32 boards ADC1.
+
+The waterpump positive wire is connected to the positive side of the battery pack. The negative side of the battery is connected into the relay modules COM port. The water pumps negative side is then connected to the relay modules NO (Normally Open) side.
+
+The 5V output of the ESP32 is then connected to the 
+
+## Platform
 
 ## The code
 
