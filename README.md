@@ -3,8 +3,8 @@
 Marcus Hammarström / mh226yz
 
 <p align="center">
-    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/final2.jpg?raw=true" alt="Image">
-    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/final3.jpg?raw=true" alt="Image">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/final2.jpg?raw=true" alt="Image" width="300">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/final3.jpg?raw=true" alt="Image" width="300">
 </p>
 
 Plant automation is a project for monitoring and watering two plants at home. Providing moisture sensing, automated irrigation as well as regular photos of the plants. Recreating this project will give usefull skills for home automation and a functioning plant monitoring and watering system.
