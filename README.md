@@ -321,3 +321,9 @@ Finally the project is done, and this is what it looks like.
 <p align="center">
     <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/final3.jpg?raw=true" alt="Image" width="450">
 </p>
+
+The project as a whole was a success but their were some struggles during the process. I was stuck at parts trying to make MQTT work but running into issues with multiple MQTT libraries for the ESP32 i decided to go for the Web API instead.
+
+What I could have done better is to start writing the report in the beginning and put all the hardware parts together a lot sooner than I did.
+
+But overall it was a success!
