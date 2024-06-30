@@ -213,9 +213,36 @@ def WaterPlants():
 ```
 Turn the waterpump on by signalling the relay. Wait 6seconds and turn the relay off, Sleep for another minute to avoid calling the watering function one more time. 
 
-To gather sensor data i 
+To gather sensor data i took 10 readings over a period of 5 seconds to avoid noise in readings.
+```py
+sum_dill = 0
+    sum_chives = 0
+    print("Making sensor readings")
+    for i in range(10):
+        utime.sleep(0.5)
+        temp_chives = chives_sensor.read()
+        temp_dill = dill_sensor.read()
+
+        sum_chives += temp_chives
+        sum_dill += temp_dill
+    chives_val = sum_chives / 10.0
+    dill_val = sum_dill / 10.0
+    chives_moisture, dill_moisture = CalculateMoisture(chives_val, dill_val)
+```
+I then called a function called CalculateMoisture that gives back a value that compares the sensor to calibrated readings.
+```py
+def CalculateMoisture(chives, dill):
+    chives_moisture = (MAX_CHIVES - chives) / CHIVES_DIFF	# Scale the sensor readings. 0 value means dry, 1 mean completely wet.
+    dill_moisture = (MAX_DILL - chives) / DILL_DIFF
+    return (chives_moisture * 100, dill_moisture * 100)		# Put moisture value in percentage form.
+```
+To get calibrate the sensors I measured it's reading when the sensor was completely dry and when the sensor was complety dipped in glass of water. 
 
 ## Transmitting the data
+
+The data is transmitted to three different feeds on Adafruit IO via there Web API. The data is sent using JSON format. 
+
+For both the camera feed and the plant moisture, data is sent every 15 seconds. 
 
 ## Presenting the data
 
