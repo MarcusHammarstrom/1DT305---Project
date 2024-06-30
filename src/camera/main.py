@@ -11,10 +11,10 @@ def BuildJSON(value):
     data = { "value": value }
     return data
 
-def SendData(value):
+def SendData(value, feed):
     headers = { "X-AIO-Key": secrets.AIO_KEY, "Content-Type": "application/json"}
     data = BuildJSON(value)
-    return requests.post(secrets.AIO_CAMERA_FEED, json=data, headers=headers)
+    return requests.post(feed, json=data, headers=headers)
 
 while True:
     try: 
@@ -27,7 +27,7 @@ while True:
         del buffer
         gc.collect()					# Free buffer mem
         data = data.decode("utf-8")     # decode base64 bytes to a base64 string
-        response = SendData(data)
+        response = SendData(data, secrets.AIO_CAMERA_FEED)
         del data
         gc.collect()
         if response.status_code == 200:

@@ -49,4 +49,3 @@ while True:
     except Exception as e:
         print("Something went wrong")
         print(str(e))
-    client.disconnect()

@@ -152,7 +152,7 @@ Adafruit IO offers multiple different options for displaying your data. I chose 
 
 ## The code
 
-The following code is in the boot.py file for both the ESP32 and the ESP32-CAM and it connects to my WiFi at home. 
+The following code is in the boot.py file for both the ESP32 and the ESP32-CAM and it connects to my WiFi at home.
 ```py
 import network
 import secrets
@@ -178,17 +178,21 @@ if not sta_if.isconnected():              # Check if connection already establis
 First we make sure that the Access Point interface of the board isn't active. Then we create an instance of the station interface. If the interface isn't connected to a network we will make sure the station interface is active and then proceed to connect to my home WiFi using the right credentials. When connected, the device IP-adress is printed. 
 
 ### Camera
+
+The following is the code for processing images on the ESP32-CAM board. This process is done over and over in a loop.
 ```py
-import camera 
-
-...
-
 camera.init(0, format=camera.JPEG, framesize=camera.FRAME_HVGA)
 buffer = camera.capture()
 print("Size of image is " + str(len(buffer)) + "bytes")
 data = base64.b64encode(buffer) # Encode image to base64
 data = data.decode("utf-8")     # decode base64 bytes to a base64 string
+camera.deinit()
 ```
+The object "camera" is initialized by setting format and framesize. A picture is then captured and stored in a buffer. The size of the buffer is printed on the serial feed. The picture is then finally encoded to the base64 format and then converted from base64 bytes to a base64 string. And before doing it in the next iteration of the loop, we deinitialize the camera.
+
+### Controller
+
+
 
 ## Transmitting the data
 
