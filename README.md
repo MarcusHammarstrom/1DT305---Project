@@ -138,13 +138,17 @@ My first choice of IDE was Visual Studio Code and use PyMakr to upload the code.
 
 The circuit diagram is made on the online platform [Circuit Diagram](https://www.circuit-diagram.org/). The pinout on the ESP32 board and the ESP32-CAM board are not 100% accurate to the boards I have because they did not have these boards on the website. But the pins that are in use are accurate and describes reality well.
 
-Both sensors aswell as the ESP32-Cam is connected to the ESP32 3.3V pin aswell as an ESP32 ground pin. The soil moisture sensors are connected to GPIO 32 and GPIO 35 on the ESP32 board. GPIO 32 and GPIO 35 are two different channels on the ESP32 boards ADC1.
+Both sensors aswell as the ESP32-Cam is connected to the ESP32 3.3V pin aswell as an ESP32 ground pin. The soil moisture sensors are connected to GPIO 32 and GPIO 35 on the ESP32 board. GPIO 32 and GPIO 35 are two different channels on the ESP32 boards ADC1. It is important that the sensors are connected to the 3.3V output and not 5V. If connected to the 5V output the analog signal will be at a constant maximum at rest.
 
 The waterpump positive wire is connected to the positive side of the battery pack. The negative side of the battery is connected into the relay modules COM port. The water pumps negative side is then connected to the relay modules NO (Normally Open) side.
 
-The 5V output of the ESP32 is then connected to the 
+The 5V output of the ESP32 is then connected to DC+ on the relay module and DC- is connected to another GND pin on the ESP32 board. The IN port of the relay module is then connected to GPIO 26 pin of the ESP32 board to allow the board to send a high signal to the relay module.
 
 ## Platform
+
+Since I wanted to expirement with an image feed i went looking for one that could support it. My choice came to be Adafruit IO since they could display images if sent as Base64 image data strings. It is also a cloud platform so the setup was much more straightforward than a self-hosted option. Self-hosted options were of interest but the scope of my project i chose to make it simpler when other parts took more time.
+
+Adafruit IO offers multiple different options for displaying your data. I chose line charts to show data history from the moisture sensors and a gauge to show current value from the moisture sensors. I also set up an image feedd for the images sent from the ESP32-CAM.
 
 ## The code
 
