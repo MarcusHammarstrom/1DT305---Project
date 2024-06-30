@@ -45,6 +45,7 @@ while True:
         print("Dill value: " + str(dill_val))
         #SendData(str(dill_val), secrets.AIO_PLANT1_FEED)
         #SendData(str(chives_val), secrets.AIO_PLANT2_FEED)
+        utime.sleep(10)
     except Exception as e:
         print("Something went wrong")
         print(str(e))
