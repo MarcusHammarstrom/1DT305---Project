@@ -99,6 +99,17 @@ My first choice of IDE was Visual Studio Code and use PyMakr to upload the code.
     Download the ESP32-Cam firmware from [this repository](https://github.com/lemariva/micropython-camera-driver). \
     Connect GPIO 0 to GND on the ESP32-Cam board to be able to flash the board.
 
+2. Thonny
+
+    Download and install [Thonny (here)](https://github.com/thonny/thonny/releases/download/v4.1.4/thonny-4.1.4.exe)
+
+## Putting everything together
+
+
+### Wiring
+
+<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/circuit.png?raw=true" alt="Image">
+
 ## Platform 
 
 ## The code
