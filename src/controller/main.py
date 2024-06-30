@@ -27,7 +27,6 @@ ntptime.host = "0.se.pool.ntp.org"
 ntptime.settime()   # Set time on the clock
 
 pump = Pin(PUMP_PIN, Pin.OUT)
-pump.value(1)
 
 def BuildJSON(value):
     data = { "value": value }
@@ -45,7 +44,7 @@ def CalculateMoisture(chives, dill):
 
 def WaterPlants():
     pump.value(1)
-    utime.sleep(10)
+    utime.sleep(6)
     pump.value(0)
     utime.sleep(60) # Sleep for 60 seconds to avoid activating function again on the same day. 
     

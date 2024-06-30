@@ -2,6 +2,11 @@
 
 Marcus Hammarström / mh226yz
 
+<p align="center">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/final2.png?raw=true" alt="Image">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/final3.png?raw=true" alt="Image">
+</p>
+
 Plant automation is a project for monitoring and watering two plants at home. Providing moisture sensing, automated irrigation as well as regular photos of the plants. Recreating this project will give usefull skills for home automation and a functioning plant monitoring and watering system.
 
 The project will take approximately 4-5 hours to recreate.
@@ -192,7 +197,23 @@ The object "camera" is initialized by setting format and framesize. A picture is
 
 ### Controller
 
+The first thing the controller does in it's main loop is decide if it should water the plants or not.
+```py
+current_time = utime.localtime(utime.time() + (2 * 3600))
+if (current_time[3] == 12 and current_time[4] == 00):
+    WaterPlants()
+```
+It does so every day at noon and the watering process is quite simple. 
+```py
+def WaterPlants():
+    pump.value(1)
+    utime.sleep(6)
+    pump.value(0)
+    utime.sleep(60) # Sleep for 60 seconds to avoid activating function again on the same day. 
+```
+Turn the waterpump on by signalling the relay. Wait 6seconds and turn the relay off, Sleep for another minute to avoid calling the watering function one more time. 
 
+To gather sensor data i 
 
 ## Transmitting the data
 
