@@ -143,7 +143,7 @@ My first choice of IDE was Visual Studio Code and use PyMakr to upload the code.
 
 The circuit diagram is made on the online platform [Circuit Diagram](https://www.circuit-diagram.org/). The pinout on the ESP32 board and the ESP32-CAM board are not 100% accurate to the boards I have because they did not have these boards on the website. But the pins that are in use are accurate and describes reality well.
 
-Both sensors aswell as the ESP32-Cam is connected to the ESP32 3.3V pin aswell as an ESP32 ground pin. The soil moisture sensors are connected to GPIO 32 and GPIO 35 on the ESP32 board. GPIO 32 and GPIO 35 are two different channels on the ESP32 boards ADC1. It is important that the sensors are connected to the 3.3V output and not 5V. If connected to the 5V output the analog signal will be at a constant maximum at rest.
+Both sensors aswell is connected to the ESP32 3.3V pin aswell as an ESP32 ground pin. The ESP32-Cam is connected to the 5V pin and a seperate GND pin. The soil moisture sensors are connected to GPIO 32 and GPIO 35 on the ESP32 board. GPIO 32 and GPIO 35 are two different channels on the ESP32 boards ADC1. It is important that the sensors are connected to the 3.3V output and not 5V. If connected to the 5V output the analog signal will be at a constant maximum at rest.
 
 The waterpump positive wire is connected to the positive side of the battery pack. The negative side of the battery is connected into the relay modules COM port. The water pumps negative side is then connected to the relay modules NO (Normally Open) side.
 
@@ -240,10 +240,38 @@ To get calibrate the sensors I measured it's reading when the sensor was complet
 
 ## Transmitting the data
 
-The data is transmitted to three different feeds on Adafruit IO via there Web API. The data is sent using JSON format. 
+Both the camera module and the controller are connected to the internet through WiFi. The data is then transmitted to three different feeds on Adafruit IO via their Web API and the data is sent using JSON format.
 
-For both the camera feed and the plant moisture, data is sent every 15 seconds. 
+For both the camera feed and the plant moisture, data is sent every 15 seconds to their different feeds. 
+
+### Camera
+
+After the camera takes an image and process it to the correct base64 format it calls a function SendData.
+```py
+response = SendData(data, secrets.AIO_CAMERA_FEED)
+```
+```py
+def SendData(value, feed):
+    headers = { "X-AIO-Key": secrets.AIO_KEY, "Content-Type": "application/json"}
+    data = BuildJSON(value)
+    return requests.post(feed, json=data, headers=headers)
+```
+SendData is responsible for sending the correct http-request by adding the Adafruit IO key and the correct content type as headers.
+
+### Controller 
+
+The controller sends it's data the same way by calling the same SendData function.
+```py
+SendData(str(dill_moisture), secrets.AIO_PLANT1_FEED)
+SendData(str(chives_moisture), secrets.AIO_PLANT2_FEED)
+```
 
 ## Presenting the data
+
+The data is presented on a dashboard on io.adafruit.com. \
+
+<p align="center">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/dashboard.png?raw=true" alt="Image" width="600">
+</p>
 
 ## Finalizing the design
