@@ -23,6 +23,11 @@ chives_sensor.atten(ADC.ATTN_11DB)
 dill_sensor = ADC(Pin(DILL_PIN))
 dill_sensor.atten(ADC.ATTN_11DB)
 
+ntptime.host = "0.se.pool.ntp.org"
+ntptime.settime()   # Set time on the clock
+
+pump = Pin(PUMP_PIN, Pin.OUT)
+
 def BuildJSON(value):
     data = { "value": value }
     return data
@@ -37,17 +42,19 @@ def CalculateMoisture(chives, dill):
     dill_moisture = (MAX_DILL - chives) / DILL_DIFF
     return (chives_moisture * 100, dill_moisture * 100)		# Put moisture value in percentage form.
 
-ntptime.host = "0.se.pool.ntp.org"
-ntptime.settime()
-
-pump = Pin(PUMP_PIN, Pin.OUT)
+def WaterPlants():
+    pump.value(1)
+    utime.sleep(5)
+    pump.value(0)
+    utime.sleep(60) # Sleep for 60 seconds to avoid activating function again on the same day. 
     
 while True:
     try:
         current_time = utime.localtime(utime.time() + (2 * 3600))
         print("Hour: " + str(current_time[3]))
         print("Minute: " + str(current_time[4]))
-        if (current_time[3] == )
+        if (current_time[3] == 12 and current_time[4] == 00):
+            WaterPlants()
         sum_dill = 0
         sum_chives = 0
         print("Making sensor readings")
