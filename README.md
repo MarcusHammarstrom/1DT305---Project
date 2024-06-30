@@ -29,62 +29,86 @@ The purpose of this project was for me to learn more about home automation, gath
 
 ### ESP32
 
-The ESP32 module is the controller that handles all the sensor data from the soil moisture sensors and processes it before sending to Adafruit IO. It is also responsible for signalling the waterpump to be activated. 
-<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/ESP32.png?raw=true" alt="Image" width="250" height="250">
+The ESP32 module is the controller that handles all the sensor data from the soil moisture sensors and processes it before sending to Adafruit IO. It is also responsible for signalling the waterpump to be activated.
+<p align="center">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/ESP32.png?raw=true" alt="Image" width="250" height="250">
+</p>
 
 ### ESP32-CAM
 
 The ESP32-CAM provides images of the plants to view online. \
-<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/ESP32-Cam.png?raw=true" alt="Image" width="250" height="250">
+<p align="center">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/ESP32-Cam.png?raw=true" alt="Image" width="250" height="250">
+</p>
 
 ### FT232RL USB till TTL Seriell Adapter
 
 The FT232RL adapter provides a way of programming the ESP32-CAM since it does not have it's own USB-port. By VCC, GND and UART pins from the CAM-board to the adapter we can plug it into the computer to program it.
-<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/FT232RL.png?raw=true" alt="Image" width="250" height="250">
+<p align="center">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/FT232RL.png?raw=true" alt="Image" width="250" height="250">
+</p>
 
 ### Soil moisture sensors
 
 The soil moistures sensors provide data to the ESP32 by measuring the capacitance of the soil. It does this by sending an analog signal to the controller which through it's analog to digital converter can give a digital value from 0-4095.
-<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/sensors.png?raw=true" alt="Image" width="250" height="250">
+<p align="center">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/sensors.png?raw=true" alt="Image" width="250" height="250">
+</p>
 
 ### Jumper wires
 
 Jumper wires are used to connect the different electrical components together, such as providing power to the moisture sensors and giving way for the analog signal back to the board. \
-<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/jumper-wires.png?raw=true" alt="Image" width="250" height="250">
+<p align="center">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/jumper-wires.png?raw=true" alt="Image" width="250" height="250">
+</p>
 
 ### Breadboard
 
 The solderless breadboard is a useful plastic block with a grid of electrical connections easily accessible through small holes. In this project it was used to aid in connecting the ESP32 to the sensors and the relay.
-<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/breadboard.png?raw=true" alt="Image" width="250" height="250">
+<p align="center">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/breadboard.png?raw=true" alt="Image" width="250" height="250">
+</p>
 
 ### Relay
 
 The relay serves as a electronic switch to turn on and off the waterpump. \
-<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/relay.png?raw=true" alt="Image" width="250" height="250">
+<p align="center">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/relay.png?raw=true" alt="Image" width="250" height="250">
+</p>
 
 ### Water pump
 
 The waterpump is used to transport water from the tank to the plants. \
-<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/pump.png?raw=true" alt="Image" width="250" height="250">
+<p align="center">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/pump.png?raw=true" alt="Image" width="250" height="250">
+</p>
 
 ### Battery holder
 
 To provide 12v power to the waterpump i needed either a battery, battery holder or a transformer. I choose to go with a battery holder that holds 8AA batteries to provide power to the pump. \
-<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/battery-holder.png?raw=true" alt="Image" width="250" height="250">
-### Water tank
+<p align="center">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/battery-holder.png?raw=true" alt="Image" width="250" height="250">
+### </p>
+Water tank
 
 For the waterpump I needed to have something to hold the water. \
-<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/water-tank.png?raw=true" alt="Image" width="250" height="250">
+<p align="center">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/water-tank.png?raw=true" alt="Image" width="250" height="250">
+</p>
 
 ### PVC Hose
 
 To move water from the tank to the plants i needed a hose to transport it in. \
-<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/pvc.png?raw=true" alt="Image" width="250" height="250">
+<p align="center">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/pvc.png?raw=true" alt="Image" width="250" height="250">
+</p>
 
 ### Hose connector
 
 The hose connector serves to split the hose into two, one for each plant. \
-<img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/hose-connector.png?raw=true" alt="Image" width="250" height="250">
+<p align="center">
+    <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/hose-connector.png?raw=true" alt="Image" width="250" height="250">
+</p>
 
 ## Computer setup
 
