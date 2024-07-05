@@ -39,7 +39,7 @@ def SendData(value, feed):
 
 def CalculateMoisture(chives, dill):
     chives_moisture = (MAX_CHIVES - chives) / CHIVES_DIFF	# Scale the sensor readings. 0 value means dry, 1 mean completely wet.
-    dill_moisture = (MAX_DILL - chives) / DILL_DIFF
+    dill_moisture = (MAX_DILL - dill) / DILL_DIFF
     return (chives_moisture * 100, dill_moisture * 100)		# Put moisture value in percentage form.
 
 def WaterPlants():
