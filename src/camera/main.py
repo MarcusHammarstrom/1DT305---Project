@@ -16,11 +16,12 @@ def SendData(value, feed):
     data = BuildJSON(value)
     return requests.post(feed, json=data, headers=headers)
 
+camera.init(0, format=camera.JPEG, framesize=camera.FRAME_HVGA)
+
 while True:
     try: 
-        print("Taking a photo in 15 seconds")
         utime.sleep(15)
-        camera.init(0, format=camera.JPEG, framesize=camera.FRAME_HVGA)
+        print("Taking a photo in 15 seconds")
         buffer = camera.capture()
         print("Size of image is " + str(len(buffer)) + "bytes")
         data = base64.b64encode(buffer) # Encode image to base64
@@ -41,4 +42,3 @@ while True:
         print(str(e))
         del e
         gc.collect()
-    camera.deinit()
