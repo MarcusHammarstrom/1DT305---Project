@@ -322,8 +322,14 @@ Finally the project is done, and this is what it looks like.
     <img src="https://github.com/MarcusHammarstrom/1DT305---Project/blob/main/img/final3.jpg?raw=true" alt="Image" width="450">
 </p>
 
-The project as a whole was a success but their were some struggles during the process. I was stuck at parts trying to make MQTT work but running into issues with multiple MQTT libraries for the ESP32 i decided to go for the Web API instead.
+The project as a whole was a success but there were some struggles during the process. I was stuck at parts trying to make MQTT work but aftter running into issues with multiple MQTT libraries for the ESP32 i decided to go for the Web API instead. There seem to be some unreliabilities in the socket library of the esp32 MicroPython firmware.
 
-What I could have done better is to start writing the report in the beginning and put all the hardware parts together a lot sooner than I did.
+What I could have done better is to start writing the report in the beginning and put all the hardware parts together a lot sooner than I did. There were parts of the report which I could have started with in the beginning of the project which would have led to me thinking through some parts thoroughly. The hardware assembly took more time than anticipated and should have started sooner.
 
-But overall it was a success!
+## Further development
+
+For further development of the project there is a lot that could be done about the physical design. The wirings of the circuit could be done better by using longer cables with more permanent connectors. The ESP32-Cam and ESP32 could be better protected with 3D printed cases and the main circuits could be soldered instead of using a breadboard.
+
+In terms of software, the project could continue it's development by experimenting with the moisture data to decide for when to water the plants. Instead of watering the plants once a day it could be done whenever the plants needed it.
+
+Overall the project was a success and I learned a lot from it.
